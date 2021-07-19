@@ -58,7 +58,7 @@ public class ClassStudy_2 {
 			
 			System.out.println("번호를 입력하세요>>");
 			int n = sc.nextInt();
-			
+			boolean check = false;
 			switch(n) {
 			case 1:
 				System.out.println("전체 정보를 출력합니다.");
@@ -88,9 +88,13 @@ public class ClassStudy_2 {
 						System.out.println("수학: "+arst[i].math);
 						System.out.println("총점: "+arst[i].total);
 						System.out.println("평균: "+arst[i].avg);
+						check = true;
 					}
 				}
 				
+				if(check == false) {
+					System.out.println("없는 번호입니다.");
+				}
 				break;
 			case 3:
 				System.out.println("학생 정보를 추가합니다.");
