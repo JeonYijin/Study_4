@@ -148,6 +148,10 @@ public class ClassStudy_2 {
 							arst[i].total = arst[j].total;
 							arst[j].total = t5;
 							
+							int t6 = arst[i].num;
+							arst[i].num = arst[j].num;
+							arst[j].num = t6;
+							
 						}
 					}
 				}

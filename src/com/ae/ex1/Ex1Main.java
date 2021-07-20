@@ -44,7 +44,14 @@ public class Ex1Main {
 		
 		//ch가 가지고 있는 무기의 이름을 변경 하고 출력
 		ch.wp.name = "검";
-		System.out.println(ch.wp.name);
+		System.out.println(ch.wp.name); //-> reference 타입 ->메모리 영역은 멤버변수 ->실제 데이터를
+		//가진 주소를 담고 있음
+		
+		
+		//ch.wp --> reference 타입 -> 메모리 영역으로 구분하면 멤버변수 -->실제 데이터를 가리키는 주소가 저장된
+		//참조변수
+		
+		
 		
 		wp.name = "도끼"; //ch.wp.name이 아니라 wp.name에 저장했는데 바뀌는 이유? wp객체의 주소가 저장되어있어서
 		System.out.println(ch.wp.name);
