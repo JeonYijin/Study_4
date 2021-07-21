@@ -8,20 +8,26 @@ public class StudentSort {
 	
 	public Student [] sortByAvg(Student [] arst) {
 		
+		Student [] copy = new Student[arst.length];
 		
-		for(int i=0; i<arst.length-1; i++) {
-			for(int j= i+1; j<arst.length; j++) {
-				if(arst[i].avg<arst[j].avg) {
-					Student tmp = arst[i];
-					arst[i] = arst[j];
-					arst[j] = tmp;
+		for(int i=0; i<arst.length; i++) {
+			copy[i] = arst[i];
+		}
+		
+		
+		for(int i=0; i<copy.length-1; i++) {
+			for(int j= i+1; j<copy.length; j++) {
+				if(copy[i].avg<copy[j].avg) {
+					Student tmp = copy[i];
+					copy[i] = copy[j];
+					copy[j] = tmp;
 
 					
 				}
 			}
 		}
 		
-		return arst;
+		return copy;
 		
 		
 	}
