@@ -6,9 +6,9 @@ public class Ex2Main {
 		
 		System.out.println("Ex2 Start");
 		
-		StudentMenu menu = new StudentMenu();
+		StudentController control = new StudentController();
 		
-		menu.start();
+		control.start();
 		
 		
 		System.out.println("Ex2 Finish");

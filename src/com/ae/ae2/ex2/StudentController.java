@@ -2,7 +2,7 @@ package com.ae.ae2.ex2;
 
 import java.util.Scanner;
 
-public class StudentMenu {
+public class StudentController {
 
 	//메서드명 start
 	//1.전체 정보 출력 - 출력하겠습니다 검색하겠습니다 등등 출력문만 나오면됨
@@ -14,7 +14,7 @@ public class StudentMenu {
 	public void start() {
 		StudentView sv = new StudentView();
 		StudentInput si = new StudentInput();
-		StudentOrder so = new StudentOrder();
+		StudentSort ss = new StudentSort();
 		boolean flag = true;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("학생 수를 입력하세요>>");
@@ -63,19 +63,21 @@ public class StudentMenu {
 				break;
 			case 3:
 				System.out.println("학생 정보를 추가합니다.");
+//				  Student [] arst2= si.addArray(arst);  //새로운걸 만들 필요 없이 원래 있던것에 넣기
+//				  arst = arst2;
+//				  arst2[arst2.length-1] = st;
+				
 				Student st = si.makeStudent();
-				//추가할 데이터 입력 끝난 후 1. 새로운 배열 생성 길이는 기존 배열보다 1칸 많게
-				//2. 복사하고 마지막 칸에 st 대입
-				  Student [] arst2= si.addArray(arst);
-				  arst = arst2;
-				  arst2[arst2.length-1] = st;
+				arst = si.addArray(arst);
+				arst[arst.length-1] = st; 
 				
 				
 				break;
 			case 4:
 				System.out.println("성적순으로 출력합니다.");
-				so.makeOrder(arst);
-				sv.viewAll(arst);
+				Student[] sort =  ss.sortByAvg(arst); //다시 1번을 눌렀을 때 정렬이 안된 상태로 만들기 위해
+				//새로운 배열 만들어서 정렬 담당 배열 만들기
+				sv.viewAll(sort);
 				break;
 			default :
 				System.out.println("종료합니다.");
