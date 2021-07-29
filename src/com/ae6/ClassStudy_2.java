@@ -2,6 +2,8 @@ package com.ae6;
 
 import java.util.Scanner;
 
+
+
 public class ClassStudy_2 {
 
 	public static void main(String[] args) {
@@ -121,48 +123,54 @@ public class ClassStudy_2 {
 				
 			case 4:
 				System.out.println("성적순으로 정렬합니다.");
-				for(int i=0; i<arst.length-1; i++) {
-					for(int j= i+1; j<arst.length; j++) {
-						if(arst[i].avg<arst[j].avg) {
-							double tmp = arst[i].avg;
-							arst[i].avg = arst[j].avg;
-							arst[j].avg = tmp;
+				
+				Student [] copy = new Student[arst.length];
+				
+				for(int i=0; i<arst.length; i++) {
+					copy[i] = arst[i];
+				}
+				for(int i=0; i<copy.length-1; i++) {
+					for(int j= i+1; j<copy.length; j++) {
+						if(copy[i].avg<copy[j].avg) {
+							double tmp = copy[i].avg;
+							copy[i].avg = copy[j].avg;
+							copy[j].avg = tmp;
 							
-							String t = arst[i].name;
-							arst[i].name = arst[j].name;
-							arst[j].name = t;
+							String t = copy[i].name;
+							copy[i].name = copy[j].name;
+							copy[j].name = t;
 							
-							int tt = arst[i].kor;
-							arst[i].kor = arst[j].kor;
-							arst[j].kor = tt;
+							int tt = copy[i].kor;
+							copy[i].kor =copy[j].kor;
+							copy[j].kor = tt;
 							
-							int ttt = arst[i].eng;
-							arst[i].eng = arst[j].eng;
-							arst[j].eng = ttt;
+							int ttt = copy[i].eng;
+							copy[i].eng = copy[j].eng;
+							copy[j].eng = ttt;
 							
-							int t4 = arst[i].math;
-							arst[i].math = arst[j].math;
-							arst[j].math = t4;
+							int t4 =copy[i].math;
+							copy[i].math =copy[j].math;
+							copy[j].math = t4;
 							
-							int t5 = arst[i].total;
-							arst[i].total = arst[j].total;
-							arst[j].total = t5;
+							int t5 = copy[i].total;
+							copy[i].total = copy[j].total;
+							copy[j].total = t5;
 							
-							int t6 = arst[i].num;
-							arst[i].num = arst[j].num;
-							arst[j].num = t6;
+							int t6 =copy[i].num;
+							copy[i].num =copy[j].num;
+							copy[j].num = t6;
 							
 						}
 					}
 				}
-				for(int i=0; i<arst.length; i++) {
-					System.out.print(arst[i].name+"\t");
-					System.out.print(arst[i].num+"\t");
-					System.out.print(arst[i].kor+"\t");
-					System.out.print(arst[i].eng+"\t");
-					System.out.print(arst[i].math+"\t");
-					System.out.print(arst[i].total+"\t");
-					System.out.println(arst[i].avg);
+				for(int i=0; i<copy.length; i++) {
+					System.out.print(copy[i].name+"\t");
+					System.out.print(copy[i].num+"\t");
+					System.out.print(copy[i].kor+"\t");
+					System.out.print(copy[i].eng+"\t");
+					System.out.print(copy[i].math+"\t");
+					System.out.print(copy[i].total+"\t");
+					System.out.println(copy[i].avg);
 					System.out.println("=============================================================");
 				}
 				break;

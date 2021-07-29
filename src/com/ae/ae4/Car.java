@@ -2,7 +2,7 @@ package com.ae.ae4;
 
 public class Car {
 	
-	String company;
+	String company;  //staic String company = "kIA"; -> 아래 this.company를 지움
 	String brand;
 	String color;
 	int price;
@@ -31,7 +31,7 @@ public class Car {
 	}
 	
 	public Car(String color, int price) { //생성자를 두개 이상 하려면 메서드 오버로딩
-		this.company = "Kia";
+		this.company = "Kia"; //지우기 static 클래스 변수로 지정했을 때
 		this.brand = "K7";
 		this.color = color;
 		this.price = price;
@@ -40,7 +40,7 @@ public class Car {
 	
 	
 	public void info() {
-		System.out.println("Company: " + this.company);
+		System.out.println("Company: " + this.company); // Car.company로 바꾸기
 		System.out.println("Brand: " + this.brand);
 		System.out.println("Color: " + this.color);
 		System.out.println("Price: " + this.price);
